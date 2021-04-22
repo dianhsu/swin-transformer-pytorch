@@ -71,7 +71,7 @@ class WindowAttention(nn.Module):
     def __init__(self, dim, heads, head_dim, shifted, window_size, relative_pos_embedding):
         super().__init__()
         inner_dim = head_dim * heads
-
+        self.head_dim = head_dim
         self.heads = heads
         self.scale = head_dim ** -0.5
         self.window_size = window_size
